@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-secondary: #06b6d4;
+  --color-accent: #f43f5e;
+  --color-bg-dark: #1e1b4b;
+  --color-bg-darker: #0f0a20;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+@layer base {
+
+  *,
+  ::after,
+  ::before {
+    @apply border-white/10;
+  }
+
+  body {
+    @apply text-slate-800 antialiased min-h-screen bg-slate-50 overflow-x-hidden;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@utility glass {
+  @apply bg-white/50 backdrop-blur-xl border border-slate-200 rounded-xl text-slate-900;
+}
+
+@utility glass-card {
+  @apply bg-white/70 backdrop-blur-2xl border border-slate-200 shadow-lg rounded-2xl transition-all duration-300 text-slate-900;
+}
+
+@utility glass-navbar {
+  @apply bg-white/80 backdrop-blur-xl border-b border-slate-200 transition-all duration-500 text-slate-900;
+}
+
+@utility gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+@utility btn-premium {
+  @apply bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-primary/40 active:scale-[0.98];
+}
+
+@utility btn-outline {
+  @apply border border-white/10 bg-transparent text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:bg-white/5 hover:border-primary;
+}
+
+@utility input {
+  @apply w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all;
+}
+
+@utility shadow-glow {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+@utility fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
